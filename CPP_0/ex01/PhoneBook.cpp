@@ -6,7 +6,7 @@
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 14:29:09 by blandineber       #+#    #+#             */
-/*   Updated: 2024/01/30 17:56:48 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/01/30 19:25:21 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 PhoneBook::PhoneBook(void)
 {
 	std::cout << "Welcome to your PhoneBook, your repository is empty" << std::endl;
-	oldestindex = 0;
+	_oldestindex = 0;
 }
 
 PhoneBook::~PhoneBook(void)
@@ -25,13 +25,13 @@ PhoneBook::~PhoneBook(void)
 
 void	PhoneBook::addcontact(const std::string& firstname, const std::string& lastname, const std::string& nickname, const std::string& phonenumber, const std::string& darkestsecret)
 {
-	_contacts[oldestindex].setFirstName(firstname);
-	_contacts[oldestindex].setLastName(lastname);
-	_contacts[oldestindex].setNickname(nickname);
-	_contacts[oldestindex].setPhoneNumber(phonenumber);
-	_contacts[oldestindex].setDarkestSecret(darkestsecret);
+	_contacts[_oldestindex].setFirstName(firstname);
+	_contacts[_oldestindex].setLastName(lastname);
+	_contacts[_oldestindex].setNickname(nickname);
+	_contacts[_oldestindex].setPhoneNumber(phonenumber);
+	_contacts[_oldestindex].setDarkestSecret(darkestsecret);
 
-	oldestindex = (oldestindex + 1) % 8;
+	_oldestindex = (_oldestindex + 1) % 8;
 
 	std::cout << "Contact added successfully" << std::endl;
 }
