@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 19:19:56 by blandineber       #+#    #+#             */
-/*   Updated: 2024/01/30 20:01:29 by blandineber      ###   ########.fr       */
+/*   Created: 2024/02/03 11:56:26 by blandineber       #+#    #+#             */
+/*   Updated: 2024/02/03 12:25:32 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name) : name(name)
+int	main(void)
 {
-	std::cout << "Constructor called for : " << name << std::endl;
-}
+	int N = 5;
+	int	i = 0;
+	Zombie *Horde;
 
-Zombie::~Zombie(void)
-{
-	std::cout << "Destructor called for : " << name << std::endl;
-}
-
-void	Zombie::announce(void) const
-{
-	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	Horde = zombieHorde(N, "zombie de la horde");
+	while (i < N)
+	{
+		Horde[i].announce();
+		i++;
+	}
+	delete[] Horde;
+	return(0);
 }
