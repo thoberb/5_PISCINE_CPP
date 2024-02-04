@@ -6,7 +6,7 @@
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 19:19:45 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/03 12:36:23 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/02/04 13:14:50 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Zombie
 {
 	private:
-		std::string name;
+		std::string _name;
 	public:
 		Zombie(){};
 		Zombie(std::string name);
