@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/13 16:32:20 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/13 17:29:26 by blandineber      ###   ########.fr       */
+/*   Created: 2024/02/13 17:14:09 by blandineber       #+#    #+#             */
+/*   Updated: 2024/02/13 17:27:33 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-int main(void)
+# include <iostream>
+# include <map>
+
+class Harl
 {
-	Harl Harl;
+	private:
+		void debug(void);
+		void info(void);
+		void warning(void);
+		void error(void);
 
-	Harl.complain("DEBUG");
-	Harl.complain("INFO");
-	Harl.complain("WARNING");
-	Harl.complain("ERROR");
-	Harl.complain("false");
-	return 0;
-}
+	public:
+		void filter(std::string level);
+};
+
+#endif

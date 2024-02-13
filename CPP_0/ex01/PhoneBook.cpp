@@ -6,7 +6,7 @@
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 14:29:09 by blandineber       #+#    #+#             */
-/*   Updated: 2024/01/30 19:25:21 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/02/13 17:37:16 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,9 @@ void	PhoneBook::searchcontact(void)
 			if (sizeof(firstname) > 10)
 				firstname[9] = '.';
 			if (sizeof(lastname) > 10)
-				firstname[9] = '.';
+				lastname[9] = '.';
 			if (sizeof(nickname) > 10)
-				firstname[9] = '.';
+				nickname[9] = '.';
 			std::cout	<< "|" << std::setw(10) << i
 						<< "|" << std::setw(10) << firstname.substr(0, 10)
 						<< "|" << std::setw(10) << lastname.substr(0, 10)
