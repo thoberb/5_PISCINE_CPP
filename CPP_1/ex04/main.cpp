@@ -6,15 +6,25 @@
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 16:11:43 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/04 16:48:29 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/02/13 16:24:03 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
 
+void	write(std::ofstream& outputFile, std::string& line, std::string& s1, std::string& s2)
+{
+	std::size_t found = line.find(s1);
+	if (found != std::string::npos)
+		outputFile << line.substr(0, found) + s2 + line.substr((found + s1.length()), (line.length() - s1.length())) << std::endl;
+	else
+		outputFile << line << std::endl;
+}
+
 int replace (std::string inputFilename, std::string s1, std::string s2)
 {
+	(void)s2;
 	std::string outputFilename = inputFilename;
 	outputFilename.append(".replace");
 	std::string line;
@@ -32,13 +42,7 @@ int replace (std::string inputFilename, std::string s1, std::string s2)
 		return 1;
 	}
 	while(std::getline(inputFile, line))
-	{
-		outputFile << line << std::endl;
-		std::size_t found = line.find(s1);
-		if (found!=std::string::npos)
-			std::cout << "s1 found at : " << found;
-		
-	}
+		write(outputFile, line, s1, s2);
 	inputFile.close();
 	outputFile.close();
 	return 0;
