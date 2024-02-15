@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
+/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 12:53:17 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/04 14:47:41 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/02/15 19:30:57 by bberthod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Weapon::~Weapon(void)
 	std::cout << "Weapon " << _type << " destroyed" << std::endl;
 }
 
-std::string Weapon::getType(void) const
+const std::string& Weapon::getType(void) const
 {
 	return (_type);
 }

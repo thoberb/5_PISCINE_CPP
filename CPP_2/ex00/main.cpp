@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
+/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 17:42:51 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/13 17:45:34 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/02/15 18:17:55 by bberthod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,3 +22,5 @@ std::cout << b.getRawBits() << std::endl;
 std::cout << c.getRawBits() << std::endl;
 return 0;
 }
+
+

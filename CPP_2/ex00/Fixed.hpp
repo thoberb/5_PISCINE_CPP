@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
+/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 17:43:02 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/13 18:25:53 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/02/15 16:30:09 by bberthod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@
 class Fixed
 {
 	private:
-		int _raw;
-		const static int _fracStock = 8;
+		int _valeur;
+		const static int _fracBits = 8;
 	public:
 		Fixed(void);
 		Fixed(const Fixed& fixed);
 		Fixed& operator=(const Fixed& fixed);
 		~Fixed(void);
 		int	getRawBits(void) const;
-		void	setRawBits(int const raw);
+		void	setRawBits(int const valeur);
 };
 
 #endif
