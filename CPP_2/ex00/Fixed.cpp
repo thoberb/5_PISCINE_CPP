@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
+/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 17:43:10 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/15 16:30:48 by bberthod         ###   ########.fr       */
+/*   Updated: 2024/02/16 14:55:33 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Fixed::Fixed(void)
 Fixed::Fixed(const Fixed& fixed)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->_valeur = fixed.getRawBits();
+	*this = fixed;
 }
 
 Fixed&	Fixed::operator= (const Fixed& fixed)

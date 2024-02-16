@@ -3,42 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
+/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:27:55 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/15 18:20:42 by bberthod         ###   ########.fr       */
+/*   Updated: 2024/02/16 14:47:07 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(const int number)
-{
-	std::cout << "Int constructor called" << std::endl;
-	int x = number << _fracBits;
-	_valeur = x;
-}
-
-Fixed::Fixed(const float number)
-{
-	std::cout << "Float constructor called" << std::endl;
-	int x = roundf(number * (1 << _fracBits));
-	_valeur = x;
-}
-
-float Fixed::toFloat(void) const
-{
-	float x;
-	x = static_cast<float>(_valeur);
-	return (x);
-}
-
-int Fixed::toInt(void) const
-{
-	int x;
-	x = static_cast<int>(_valeur);
-	return (x);
-}
 
 Fixed::Fixed(void)
 {
@@ -46,23 +19,39 @@ Fixed::Fixed(void)
 	_valeur = 0;
 }
 
-std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
-{
-	os << static_cast<float>(fixed.getRawBits());
-	return os;
-}
 
 Fixed::Fixed(const Fixed& fixed)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->_valeur = fixed.getRawBits();
+	*this = fixed;
 }
 
-Fixed&	Fixed::operator= (const Fixed& fixed)
+Fixed& Fixed::operator= (const Fixed& fixed)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	this->_valeur = fixed.getRawBits();
 	return *this;
+}
+
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
+{
+	float x = static_cast<float>(fixed.getRawBits()) / (1 << 8);
+	os << x;
+	return os;
+}
+
+Fixed::Fixed(const int val)
+{
+	std::cout << "Int constructor called" << std::endl;
+	int x = val <<_fracBits;
+	setRawBits(x);
+}
+
+Fixed::Fixed(const float number)
+{
+	std::cout << "Float constructor called" << std::endl;
+	int x = roundf(number * (1 <<_fracBits));
+	setRawBits(x);
 }
 
 Fixed::~Fixed(void)
@@ -70,13 +59,25 @@ Fixed::~Fixed(void)
 	std::cout << "Destructor called" << std::endl;
 }
 
-int	Fixed::getRawBits(void) const
+//1 <<_fracBits Cela revient à multiplier 1 par 2 élevé à la puissance de_fracBits
+
+float Fixed::toFloat(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	float x = static_cast<float>(_valeur) / (1 << _fracBits);
+	return x;
+}
+
+int	Fixed::toInt(void) const
+{
+	return (int)(_valeur / (1 <<_fracBits));
+}
+
+int Fixed::getRawBits(void) const
+{
 	return (_valeur);
 }
 
-void	Fixed::setRawBits(int const valeur)
+void Fixed::setRawBits(int const raw)
 {
-	_valeur = valeur;
+	_valeur = raw;
 }
