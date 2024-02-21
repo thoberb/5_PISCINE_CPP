@@ -6,11 +6,12 @@
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:58:39 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/21 12:58:56 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/02/21 17:40:03 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <iostream>
 
 int main( void ) {
 Fixed a;

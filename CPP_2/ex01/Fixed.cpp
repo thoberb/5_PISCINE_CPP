@@ -6,12 +6,13 @@
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 18:27:55 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/16 14:47:07 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/02/21 17:47:22 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
+//1 <<_fracBits Cela revient à multiplier 1 par 2 élevé à la puissance de_fracBits
 
 Fixed::Fixed(void)
 {
@@ -59,8 +60,6 @@ Fixed::~Fixed(void)
 	std::cout << "Destructor called" << std::endl;
 }
 
-//1 <<_fracBits Cela revient à multiplier 1 par 2 élevé à la puissance de_fracBits
-
 float Fixed::toFloat(void) const
 {
 	float x = static_cast<float>(_valeur) / (1 << _fracBits);
@@ -74,6 +73,7 @@ int	Fixed::toInt(void) const
 
 int Fixed::getRawBits(void) const
 {
+	//std::cout << "getRawBits member function called" << std::endl;
 	return (_valeur);
 }
 
