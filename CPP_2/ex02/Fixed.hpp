@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
+/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 14:58:49 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/20 17:54:06 by bberthod         ###   ########.fr       */
+/*   Updated: 2024/02/21 13:24:15 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,20 @@ class Fixed
 		void setRawBits(int const raw);
 		float toFloat(void) const;
 		int toInt(void) const;
+		bool operator>(const Fixed& nombre) const;
+		bool operator<(const Fixed& nombre) const;
+		bool operator>=(const Fixed& nombre) const;
+		bool operator<=(const Fixed& nombre) const;
+		bool operator==(const Fixed& nombre) const;
+		bool operator!=(const Fixed& nombre) const;
+		Fixed operator+(const Fixed& nombre) const;
+		Fixed operator-(const Fixed& nombre) const;
+		Fixed operator*(const Fixed& nombre) const;
+		Fixed operator/(const Fixed& nombre) const;
+		Fixed operator++(int);
+		Fixed& operator++(void);
+		Fixed operator--(int);
+		Fixed& operator--(void);
 };
 
 	std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
