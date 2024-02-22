@@ -6,12 +6,20 @@
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 04:18:54 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/22 04:57:08 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/02/22 05:10:25 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap(void)
+{
+	_name = "NoName";
+	_HitPoints = 100;
+	_EnergyPoints = 100;
+	_AttackDamage = 30;
+	std::cout << "Constructor called for FragTrap " << _name << std::endl;
+}
 
 FragTrap::FragTrap(std::string name)
 {
@@ -48,5 +56,5 @@ FragTrap::~FragTrap(void)
 
 void FragTrap::highFivesGuys(void)
 {
-	std::cout << this->_name << " wants a highfive !" << std::endl;
+	std::cout << this->_name << "wants a highfive !" << std::endl;
 }
