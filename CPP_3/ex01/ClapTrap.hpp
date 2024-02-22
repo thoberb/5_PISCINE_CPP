@@ -6,7 +6,7 @@
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 01:37:45 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/22 03:34:55 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/02/22 03:46:46 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string _name;
 		int	_HitPoints;
 		int _EnergyPoints;
 		int _AttackDamage;
 	public:
+		ClapTrap(void);
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap& ClapTrap);
 		ClapTrap& operator=(const ClapTrap& ClapTrap);

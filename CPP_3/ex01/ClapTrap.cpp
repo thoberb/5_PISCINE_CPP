@@ -6,15 +6,20 @@
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 01:37:30 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/22 03:34:37 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/02/22 04:09:14 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(void) : _name("NoName"), _HitPoints(10), _EnergyPoints(10), _AttackDamage(0)
+{
+	std::cout << "Default constructor called for ClapTrap" << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string name) : _name(name), _HitPoints(10), _EnergyPoints(10), _AttackDamage(0)
 {
-	std::cout << "Default constructor called for " << _name << std::endl;
+	std::cout << "Constructor called for ClapTrap " << _name << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& clapTrap)
@@ -35,7 +40,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& clapTrap)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Destructor called for ClapTrap" << std::endl;
 }
 
 void	ClapTrap::attack(const std::string& target)
@@ -50,7 +55,7 @@ void	ClapTrap::attack(const std::string& target)
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	_HitPoints -= amount;
-	std::cout << "ClapTrap " << _name << " takes " << amount << " points of damage and has now " << _HitPoints << " hit points." << std::endl;
+	std::cout << _name << " takes " << amount << " points of damage and has now " << _HitPoints << " hit points." << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
@@ -59,8 +64,8 @@ void ClapTrap::beRepaired(unsigned int amount)
 	{
 		_HitPoints += amount;
 		_EnergyPoints--;
-		std::cout << "ClapTrap " << _name << " repairs itself and gains " << amount << " hit points." << std::endl;
-		std::cout << "ClapTrap " << _name << " has now a total of " << _HitPoints << " hit points." << std::endl;
+		std::cout << _name << " repairs itself and gains " << amount << " hit points." << std::endl;
+		std::cout << _name << " has now a total of " << _HitPoints << " hit points." << std::endl;
 	}
 }
 
