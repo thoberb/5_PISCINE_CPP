@@ -5,24 +5,57 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 01:37:06 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/22 02:51:53 by blandineber      ###   ########.fr       */
+/*   Created: 2024/03/01 13:49:03 by blandineber       #+#    #+#             */
+/*   Updated: 2024/03/01 14:23:04 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-int main(void)
+int main (void)
 {
-	ClapTrap claptrap("WALL-E");
+	int turns = 0;
 
-	while (claptrap.getEnergyPoints() > 0 && claptrap.getHitPoints() > 0)
+	ClapTrap blandine("Blandine");
+
+	while (turns < 15)
 	{
-		claptrap.attack("EVIL ROBOT");
-		claptrap.takeDamage(4);
-		claptrap.beRepaired(2);
-		std::cout << std::endl;
+		blandine.attack("Leo");
+		blandine.beRepaired(10);
+		blandine.takeDamage(5);
+		turns++;
 	}
-	std::cout << claptrap.getName() << " died..." << std::endl;
-	return 0;
+
+	// ClapTrap blandine;
+
+	// while (turns < 15)
+	// {
+	// 	blandine.attack("Leo");
+	// 	blandine.beRepaired(10);
+	// 	blandine.takeDamage(5);
+	// 	turns++;
+	// }
+
+	// ClapTrap jean;
+	// ClapTrap blandine(jean);
+
+	// while (turns < 15)
+	// {
+	// 	blandine.attack("Leo");
+	// 	blandine.beRepaired(10);
+	// 	blandine.takeDamage(5);
+	// 	turns++;
+	// }
+
+	// ClapTrap jean;
+	// ClapTrap blandine;
+	// blandine = jean;
+
+	// while (turns < 15)
+	// {
+	// 	blandine.attack("Leo");
+	// 	blandine.beRepaired(10);
+	// 	blandine.takeDamage(5);
+	// 	turns++;
+	// }
 }

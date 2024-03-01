@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
+/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 14:29:30 by blandineber       #+#    #+#             */
-/*   Updated: 2024/01/30 15:03:32 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/02/12 16:28:22 by bberthod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 # include "iostream"
 # include <iomanip>
-# include <string>
+# include <cstdlib>
+# include <cstring>
 # include <cctype>
 
 class Contact

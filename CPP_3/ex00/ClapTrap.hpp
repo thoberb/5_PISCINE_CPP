@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 01:37:45 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/22 03:34:55 by blandineber      ###   ########.fr       */
+/*   Created: 2024/03/01 13:13:19 by blandineber       #+#    #+#             */
+/*   Updated: 2024/03/01 13:27:25 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,24 @@
 # define CLAPTRAP_HPP
 
 # include <iostream>
+# include "color.hpp"
 
 class ClapTrap
 {
 	private:
 		std::string _name;
-		int	_HitPoints;
-		int _EnergyPoints;
-		int _AttackDamage;
+		int _hitPoints;
+		int _energyPoints;
+		int _attackDamage;
 	public:
+		ClapTrap(void);
 		ClapTrap(std::string name);
-		ClapTrap(const ClapTrap& ClapTrap);
-		ClapTrap& operator=(const ClapTrap& ClapTrap);
+		ClapTrap(const ClapTrap& clapTrap);
+		ClapTrap& operator=(const ClapTrap& clapTrap);
 		~ClapTrap(void);
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-		int getEnergyPoints(void);
-		int getHitPoints(void);
-		std::string getName(void);
 };
 
 #endif

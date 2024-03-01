@@ -3,53 +3,64 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
+/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 04:49:24 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/22 05:16:41 by blandineber      ###   ########.fr       */
+/*   Created: 2024/03/01 15:09:36 by blandineber       #+#    #+#             */
+/*   Updated: 2024/03/01 18:24:23 by bberthod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name")
+DiamondTrap::DiamondTrap(void) : ClapTrap(), ScavTrap(), FragTrap()
 {
-	std::cout << "Constructor called of Diamond Trap" << std::endl;
+	_name = "default";
+	ClapTrap::_name = "default_clap_name";
+	_hitPoints = FragTrap::_hitPoints;
+	_attackDamage = FragTrap::_attackDamage;
+	_energyPoints = ScavTrap::_energyPoints;
+	std::cout << BOLD_GREEN "Default constructor called for DiamondTrap" RESET << std::endl;
+}
+
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name + "_clap_name"), FragTrap(name + "_clap_name")
+{
 	_name = name;
-	_HitPoints = FragTrap::_HitPoints;
-	_EnergyPoints = ScavTrap::_EnergyPoints;
-	_AttackDamage = FragTrap::_AttackDamage;
+	ClapTrap::_name = name + "_clap_name";
+	_hitPoints = FragTrap::_hitPoints;
+	_attackDamage = FragTrap::_attackDamage;
+	_energyPoints = ScavTrap::_energyPoints;
+	std::cout << BOLD_GREEN "Constructor called for DiamondTrap " << _name << RESET << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap& diamondtrap) : ClapTrap(diamondtrap._name + "_clap_name")
+DiamondTrap::DiamondTrap(const DiamondTrap& diamondTrap) : ClapTrap(diamondTrap), ScavTrap(diamondTrap), FragTrap(diamondTrap)
 {
-	std::cout << " Copie constructor called of Diamond Trap" << std::endl;
-	_name = diamondtrap._name;
-	_HitPoints = diamondtrap.FragTrap::_HitPoints;
-	_EnergyPoints = diamondtrap.ScavTrap::_EnergyPoints;
-	_AttackDamage = diamondtrap.FragTrap::_AttackDamage;
+	_name = diamondTrap._name;
+	ClapTrap::_name = _name + "_clap_name";
+	_hitPoints = diamondTrap._hitPoints;
+	_energyPoints = diamondTrap._energyPoints;
+	_attackDamage = diamondTrap._attackDamage;
+	std::cout << BOLD_GREEN "Copy constructor called for DiamondTrap" RESET << std::endl;
 }
 
-DiamondTrap& DiamondTrap::operator= (const DiamondTrap& diamondtrap)
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap& diamondTrap)
 {
-	std::cout << " copie assignement opperator called of Diamond Trap" << std::endl;
-	if (this != &diamondtrap)
+	std::cout << BOLD_GREEN "Copy assignment operator called for DiamondTrap" RESET << std::endl;
+	if (this != &diamondTrap)
 	{
-		ClapTrap::_name = diamondtrap._name + "_clap_name";
-		_name = diamondtrap._name;
-		_HitPoints = diamondtrap.FragTrap::_HitPoints;
-		_EnergyPoints = diamondtrap.ScavTrap::_EnergyPoints;
-		_AttackDamage = diamondtrap.FragTrap::_AttackDamage;
+		this->_name = diamondTrap._name;
+		this->_hitPoints = diamondTrap._hitPoints;
+		this->_energyPoints = diamondTrap._energyPoints;
+		this->_attackDamage = diamondTrap._attackDamage;
 	}
-	return *this;
+	return (*this);
 }
 
 DiamondTrap::~DiamondTrap(void)
 {
-	std::cout << "Destructor called of Diamond Trap" << std::endl;
+	std::cout << BOLD_GREEN "Destructor called for DiamondTrap" RESET << std::endl;
 }
 
 void DiamondTrap::whoAmI(void)
 {
-	std::cout << "I am " << _name << " my claptrap name is " << ClapTrap::_name << std::endl;
+	std::cout << GREEN "My DiamondTrap name is " << _name << " and my ClapTrap name is " << ClapTrap::_name << RESET << std::endl;
 }

@@ -5,41 +5,61 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 01:37:06 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/22 04:12:08 by blandineber      ###   ########.fr       */
+/*   Created: 2024/03/01 13:49:03 by blandineber       #+#    #+#             */
+/*   Updated: 2024/03/01 14:49:39 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-int main(void)
+int main (void)
 {
+	int turns = 0;
 
-	ClapTrap claptrap("WALL-E");
+	ScavTrap blandine("Blandine");
 
-	while (claptrap.getEnergyPoints() > 0 && claptrap.getHitPoints() > 0)
+	while (turns < 15)
 	{
-		claptrap.attack("EVIL ROBOT");
-		claptrap.takeDamage(4);
-		claptrap.beRepaired(2);
-		std::cout << std::endl;
+		blandine.attack("Leo");
+		blandine.beRepaired(10);
+		blandine.takeDamage(5);
+		blandine.guardGate();
+		turns++;
 	}
-	std::cout << claptrap.getName() << " died..." << std::endl;
 
-	ScavTrap scavtrap("SCAVY");
+	// ScavTrap blandine;
 
-	while (scavtrap.getEnergyPoints() > 0 && scavtrap.getHitPoints() > 0)
-	{
-		scavtrap.attack("Dude");
-		scavtrap.takeDamage(20);
-		scavtrap.beRepaired(5);
-		std::cout << std::endl;
-	}
-	std::cout << scavtrap.getName() << " died..." << std::endl;
+	// while (turns < 15)
+	// {
+	// 	blandine.attack("Leo");
+	// 	blandine.beRepaired(10);
+	// 	blandine.takeDamage(5);
+	// 	blandine.guardGate();
+	// 	turns++;
+	// }
 
-	ScavTrap scavtrap2("LILI");
+	// ScavTrap jean;
+	// ScavTrap blandine(jean);
 
-	scavtrap2.guardGate();
-	
-	return 0;
+	// while (turns < 15)
+	// {
+	// 	blandine.attack("Leo");
+	// 	blandine.beRepaired(10);
+	// 	blandine.takeDamage(5);
+	// 	blandine.guardGate();
+	// 	turns++;
+	// }
+
+	// ScavTrap jean;
+	// ScavTrap blandine;
+	// blandine = jean;
+
+	// while (turns < 15)
+	// {
+	// 	blandine.attack("Leo");
+	// 	blandine.beRepaired(10);
+	// 	blandine.takeDamage(5);
+	//	blandine.guardGate();
+	// 	turns++;
+	// }
 }

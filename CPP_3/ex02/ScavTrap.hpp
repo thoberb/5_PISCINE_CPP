@@ -5,24 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 03:10:35 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/22 03:59:29 by blandineber      ###   ########.fr       */
+/*   Created: 2024/03/01 14:24:46 by blandineber       #+#    #+#             */
+/*   Updated: 2024/03/01 14:28:10 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
-#include "ClapTrap.hpp"
+# include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap
 {
-	public:
+	public :
+		ScavTrap(void);
 		ScavTrap(std::string name);
 		ScavTrap(const ScavTrap& scavTrap);
 		ScavTrap& operator=(const ScavTrap& scavTrap);
 		~ScavTrap(void);
-		void attack(const std::string& target);
 		void guardGate(void);
 };
 

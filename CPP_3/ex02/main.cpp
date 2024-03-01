@@ -5,60 +5,61 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 01:37:06 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/22 04:33:32 by blandineber      ###   ########.fr       */
+/*   Created: 2024/03/01 13:49:03 by blandineber       #+#    #+#             */
+/*   Updated: 2024/03/01 15:01:37 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-int main(void)
+int main (void)
 {
+	int turns = 0;
 
-	ClapTrap claptrap("WALL-E");
-	while (claptrap.getEnergyPoints() > 0 && claptrap.getHitPoints() > 0)
+	FragTrap blandine("Blandine");
+
+	while (turns < 15)
 	{
-		claptrap.attack("EVIL ROBOT");
-		claptrap.takeDamage(4);
-		claptrap.beRepaired(2);
-		std::cout << std::endl;
+		blandine.attack("Leo");
+		blandine.beRepaired(10);
+		blandine.takeDamage(5);
+		blandine.highFivesGuys();
+		turns++;
 	}
-	std::cout << claptrap.getName() << " died..." << std::endl;
 
-	std::cout << std::endl;
+	// FragTrap blandine;
 
-	ScavTrap scavtrap("SCAVY");
-	while (scavtrap.getEnergyPoints() > 0 && scavtrap.getHitPoints() > 0)
-	{
-		scavtrap.attack("Dude");
-		scavtrap.takeDamage(20);
-		scavtrap.beRepaired(5);
-		std::cout << std::endl;
-	}
-	std::cout << scavtrap.getName() << " died..." << std::endl;
+	// while (turns < 15)
+	// {
+	// 	blandine.attack("Leo");
+	// 	blandine.beRepaired(10);
+	// 	blandine.takeDamage(5);
+	// 	blandine.highFivesGuys();
+	// 	turns++;
+	// }
 
-	std::cout << std::endl;
+	// FragTrap jean;
+	// FragTrap blandine(jean);
 
-	ScavTrap scavtrap2("LILI");
-	scavtrap2.guardGate();
+	// while (turns < 15)
+	// {
+	// 	blandine.attack("Leo");
+	// 	blandine.beRepaired(10);
+	// 	blandine.takeDamage(5);
+	// 	blandine.highFivesGuys();
+	// 	turns++;
+	// }
 
-	std::cout << std::endl;
+	// FragTrap jean;
+	// FragTrap blandine;
+	// blandine = jean;
 
-	FragTrap fragTrap("FRAGY");
-	while (fragTrap.getEnergyPoints() > 0 && fragTrap.getHitPoints() > 0)
-	{
-		fragTrap.attack("random guy");
-		fragTrap.takeDamage(30);
-		fragTrap.beRepaired(10);
-		std::cout << std::endl;
-	}
-	std::cout << fragTrap.getName() << " died..." << std::endl;
-
-	std::cout << std::endl;
-
-	FragTrap FragTrap2("FRAGY2");
-	FragTrap2.highFivesGuys();
-
-	return 0;
+	// while (turns < 15)
+	// {
+	// 	blandine.attack("Leo");
+	// 	blandine.beRepaired(10);
+	// 	blandine.takeDamage(5);
+	//	blandine.highFivesGuys();
+	// 	turns++;
+	// }
 }

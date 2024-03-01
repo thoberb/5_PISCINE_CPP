@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
+/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 12:53:10 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/15 19:30:47 by bberthod         ###   ########.fr       */
+/*   Updated: 2024/02/04 14:47:03 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Weapon
 	public:
 		Weapon(std::string type);
 		~Weapon(void);
-		const std::string& getType(void) const;
+		std::string getType(void) const;
 		void setType(std::string type);
 };
 

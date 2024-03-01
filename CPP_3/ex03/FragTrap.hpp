@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
+/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 04:19:31 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/22 05:09:59 by blandineber      ###   ########.fr       */
+/*   Created: 2024/03/01 14:52:38 by blandineber       #+#    #+#             */
+/*   Updated: 2024/03/01 18:23:16 by bberthod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRAGTRAP_HPP
 # define FRAGTRAP_HPP
 
-#include "ClapTrap.hpp"
+# include "ScavTrap.hpp"
 
 class FragTrap : public virtual ClapTrap
 {
 	public:
-	FragTrap(void);
-	FragTrap(std::string name);
-	FragTrap(const FragTrap& fragTrap);
-	FragTrap& operator=(const FragTrap& fragTrap);
-	~FragTrap(void);
-	void highFivesGuys(void);
+		FragTrap(void);
+		FragTrap(std::string name);
+		FragTrap(const FragTrap& fragTrap);
+		FragTrap& operator=(const FragTrap& FragTrap);
+		~FragTrap(void);
+		void highFivesGuys(void);
 };
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
+/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 18:16:00 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/21 19:00:17 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/02/26 18:03:26 by bberthod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 Point::Point(void) : _x(0), _y(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	//std::cout << "Default constructor called" << std::endl;
 }
 
 Point::Point(const float f1, const float f2) : _x(f1), _y(f2)
 {
-	std::cout << "Float constructor called" << std::endl;
+	//std::cout << "Float constructor called" << std::endl;
 }
 
 Point::Point(const Point& point) : _x(point.getX()), _y(point.getY())
 {
-	std::cout << "Copy constructor called" << std::endl;
+	//std::cout << "Copy constructor called" << std::endl;
 }
 
 Point& Point::operator=(const Point& point)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	//std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &point)
 	{
 		(Fixed)this->_x = point.getX();
@@ -40,7 +40,7 @@ Point& Point::operator=(const Point& point)
 
 Point::~Point(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 }
 
 Fixed Point::getX(void) const

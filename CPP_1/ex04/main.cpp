@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
+/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 16:11:43 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/13 16:24:03 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/02/15 16:05:07 by bberthod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ int replace (std::string inputFilename, std::string s1, std::string s2)
 	outputFilename.append(".replace");
 	std::string line;
 
-	std::ifstream inputFile(inputFilename);
+	std::ifstream inputFile(inputFilename.c_str());
 	if(!inputFile.is_open())
 	{
 		std::cerr << "Error opening file : " << inputFilename << std::endl;
 		return 1;
 	}
-	std::ofstream outputFile(outputFilename, std::ios::out);
+	std::ofstream outputFile(outputFilename.c_str(), std::ios::out);
 	if(!outputFile.is_open())
 	{
 		std::cerr << "Error opening file : " << outputFilename << std::endl;

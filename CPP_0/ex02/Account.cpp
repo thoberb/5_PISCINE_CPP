@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
+/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 18:09:06 by blandineber       #+#    #+#             */
-/*   Updated: 2024/01/30 19:11:17 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/02/12 16:35:05 by bberthod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
 #include <iomanip>
+#include <ctime>
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -21,9 +22,10 @@ int Account::_totalNbWithdrawals = 0;
 
 void Account::_displayTimestamp(void)
 {
-	std::time_t currentTime = std::time(0);
-	std::tm *localTime = std::localtime(&currentTime);
-	std::cout << "[" << std::put_time(localTime, "%Y%m%d_%H%M%S") << "] ";
+	std::time_t t = std::time(0);
+	char localTime[100];  // Adjust the buffer size as needed
+	std::strftime(localTime, sizeof(localTime), "%Y%m%d_%H%M%S", std::localtime(&t));
+	std::cout << "[" << localTime << "] ";
 }
 
 Account::Account(int initial_deposit) : _accountIndex(_nbAccounts), _amount(initial_deposit), _nbDeposits(0), _nbWithdrawals(0)

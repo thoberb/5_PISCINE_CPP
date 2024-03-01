@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
+/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 04:41:24 by blandineber       #+#    #+#             */
-/*   Updated: 2024/02/22 04:58:46 by blandineber      ###   ########.fr       */
+/*   Created: 2024/03/01 15:05:22 by blandineber       #+#    #+#             */
+/*   Updated: 2024/03/01 18:22:07 by bberthod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DIAMONDTRAP_HPP
 # define DIAMONDTRAP_HPP
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+# include "FragTrap.hpp"
 
-class DiamondTrap : public ScavTrap, public FragTrap
+class DiamondTrap : public virtual ScavTrap, public virtual FragTrap
 {
-	private:
+	private :
 		std::string _name;
 	public:
+		DiamondTrap(void);
 		DiamondTrap(std::string name);
 		DiamondTrap(const DiamondTrap& diamondTrap);
 		DiamondTrap& operator=(const DiamondTrap& diamondTrap);
