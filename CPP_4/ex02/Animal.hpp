@@ -6,7 +6,7 @@
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 18:50:54 by bberthod          #+#    #+#             */
-/*   Updated: 2024/03/02 17:04:38 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/03/02 19:03:33 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ class Animal
 		Animal(const Animal& animal);
 		Animal& operator=(const Animal& animal);
 		virtual ~Animal(void);
-		
+
 		std::string getType(void) const;
-		virtual void makeSound(void) const;
+		virtual void makeSound(void) const = 0;
 };
 
 #endif

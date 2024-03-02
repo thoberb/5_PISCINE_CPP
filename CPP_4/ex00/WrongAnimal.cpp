@@ -14,21 +14,21 @@
 
 WrongAnimal::WrongAnimal(void)
 {
-	_type = "default";
 	std::cout << BOLD_RED "Default constructor called for WrongAnimal" RESET << std::endl;
+	_type = "default";
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& wronganimal)
 {
-	_type = wronganimal._type;
 	std::cout << BOLD_RED "Copy constructor called for WrongAnimal" << RESET << std::endl;
+	_type = wronganimal._type;
 }
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& wronganimal)
 {
+	std::cout << BOLD_RED "Copy assignment operator called for WrongAnimal" << RESET << std::endl;
 	if (this != &wronganimal)
 		this->_type = wronganimal._type;
-	std::cout << BOLD_RED "Copy assignment operator called for WrongAnimal" << RESET << std::endl;
 	return (*this);
 }
 

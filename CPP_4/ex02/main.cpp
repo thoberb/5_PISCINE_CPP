@@ -6,7 +6,7 @@
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 18:55:06 by bberthod          #+#    #+#             */
-/*   Updated: 2024/03/02 18:56:55 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/03/02 19:05:08 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,16 @@
 
 int main()
 {
-	int i = 0;
-	const Animal* j[20];
+	//const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	//meta->makeSound();
 
-	while(i++ <= 20)
-	{
-		if (i <= 10)
-			j[i] = new Dog();
-		else
-			j[i] = new Cat();
-	}
-
-	i = 0;
-	while(i++ <= 20)
-		delete(j[i]);
+	delete i;
+	delete j;
+	//delete meta;
 }

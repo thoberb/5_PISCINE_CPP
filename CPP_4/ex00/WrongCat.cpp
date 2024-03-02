@@ -14,21 +14,21 @@
 
 WrongCat::WrongCat(void)
 {
-	_type = "WrongCat";
 	std::cout << BOLD_YELLOW "Default constructor called for WrongCat" RESET << std::endl;
+	_type = "WrongCat";
 }
 
 WrongCat::WrongCat(const WrongCat& wrongcat)
 {
-	_type = wrongcat._type;
 	std::cout << BOLD_YELLOW "Copy constructor called for WrongCat" << RESET << std::endl;
+	_type = wrongcat._type;
 }
 
 WrongCat& WrongCat::operator=(const WrongCat& wrongcat)
 {
+	std::cout << BOLD_YELLOW "Copy assignment operator called for WrongCat" << RESET << std::endl;
 	if (this != &wrongcat)
 		this->_type = wrongcat._type;
-	std::cout << BOLD_YELLOW "Copy assignment operator called for WrongCat" << RESET << std::endl;
 	return (*this);
 }
 
