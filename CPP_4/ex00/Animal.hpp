@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
+/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 18:50:54 by bberthod          #+#    #+#             */
-/*   Updated: 2024/03/01 19:23:13 by bberthod         ###   ########.fr       */
+/*   Updated: 2024/03/02 17:04:38 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define ANIMAL_HPP
 
 # include "color.hpp"
-# include "Dog.hpp"
-# include "Cat.hpp"
 # include <iostream>
 
 class Animal
@@ -27,9 +25,10 @@ class Animal
 		Animal(void);
 		Animal(const Animal& animal);
 		Animal& operator=(const Animal& animal);
-		~Animal(void);
-		void getType(void) const;
-		void makeSound(void) const;
+		virtual ~Animal(void);
+		
+		std::string getType(void) const;
+		virtual void makeSound(void) const;
 };
 
 #endif

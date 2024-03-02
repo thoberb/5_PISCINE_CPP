@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
+/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:21:40 by bberthod          #+#    #+#             */
-/*   Updated: 2024/03/01 19:28:44 by bberthod         ###   ########.fr       */
+/*   Updated: 2024/03/02 17:06:17 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Dog::Dog(const Dog& dog)
 
 Dog& Dog::operator=(const Dog& dog)
 {
-	if (this != &Dog)
+	if (this != &dog)
 		this->_type = dog._type;
 	std::cout << BOLD_BLUE "Copy assignment operator called for Dog" << RESET << std::endl;
 	return (*this);
@@ -35,4 +35,9 @@ Dog& Dog::operator=(const Dog& dog)
 Dog::~Dog(void)
 {
 	std::cout << BOLD_BLUE "Destructor called for Dog" RESET << std::endl;
+}
+
+void Dog::makeSound(void) const
+{
+	std::cout << BLUE "wouuuuf wouf" RESET << std::endl;
 }

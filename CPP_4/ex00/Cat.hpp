@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
+/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:18:18 by bberthod          #+#    #+#             */
-/*   Updated: 2024/03/01 19:28:24 by bberthod         ###   ########.fr       */
+/*   Updated: 2024/03/02 17:04:48 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class Cat : public Animal
 		Cat(const Cat& cat);
 		Cat& operator=(const Cat& cat);
 		~Cat(void);
+
+		void makeSound(void) const;
 };
 
 #endif

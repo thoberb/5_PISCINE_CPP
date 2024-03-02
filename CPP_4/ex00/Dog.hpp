@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
+/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:14:52 by bberthod          #+#    #+#             */
-/*   Updated: 2024/03/01 19:28:06 by bberthod         ###   ########.fr       */
+/*   Updated: 2024/03/02 17:04:59 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class Dog : public Animal
 		Dog(const Dog& dog);
 		Dog& operator=(const Dog& dog);
 		~Dog(void);
+		
+		void makeSound(void) const;
 };
 
 #endif

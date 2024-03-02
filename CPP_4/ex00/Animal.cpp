@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
+/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:02:11 by bberthod          #+#    #+#             */
-/*   Updated: 2024/03/01 19:16:53 by bberthod         ###   ########.fr       */
+/*   Updated: 2024/03/02 17:04:27 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,12 @@ Animal::~Animal(void)
 	std::cout << BOLD_RED "Destructor called for Animal" RESET << std::endl;
 }
 
-void Animal::getType(void) const
+std::string Animal::getType(void) const
 {
 	return (_type);
 }
 
 void Animal::makeSound(void) const
 {
-	if (strcmp(_type, "Cat"))
-		std::cout << YELLOW "Miaouuuuuuu miaou" RESET << std::endl;
-	else if (strcmp(_type, "Dog"))
-		std::cout << BLUE "Wouuuuf wouf" RESET << std::endl;
-	else
-		std::cout << "weird noises from an unknown animal" << std::endl;
+	std::cout << "weird noises from an unknown animal" << std::endl;
 }
