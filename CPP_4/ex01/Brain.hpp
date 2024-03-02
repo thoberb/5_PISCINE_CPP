@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/01 18:55:06 by bberthod          #+#    #+#             */
-/*   Updated: 2024/03/02 17:55:29 by blandineber      ###   ########.fr       */
+/*   Created: 2024/03/02 17:56:17 by blandineber       #+#    #+#             */
+/*   Updated: 2024/03/02 18:04:23 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-int main()
+# include <iostream>
+# include "color.hpp"
+
+class Brain
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	delete j;//should not create a leak
-	delete i;
-	return 0;
-}
+	private:
+		std::string _ideas[100];
+	public:
+		Brain(void);
+		Brain(const Brain& brain);
+		Brain& operator=(const Brain& brain);
+		~Brain(void);
+};
+
+#endif

@@ -6,7 +6,7 @@
 #    By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/22 01:36:21 by blandineber       #+#    #+#              #
-#    Updated: 2024/03/02 17:45:13 by blandineber      ###   ########.fr        #
+#    Updated: 2024/03/02 17:54:56 by blandineber      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = Polymorphisme
+NAME = JeNeVeuxPasBrulerLeMonde
 
 all: $(NAME)
 
