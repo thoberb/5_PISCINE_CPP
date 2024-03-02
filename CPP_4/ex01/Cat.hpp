@@ -6,7 +6,7 @@
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:18:18 by bberthod          #+#    #+#             */
-/*   Updated: 2024/03/02 17:04:48 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/03/02 18:23:39 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 # define CAT_HPP
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Cat : public Animal
 {
+	private:
+		Brain* _catbrain;
 	public:
 		Cat(void);
 		Cat(const Cat& cat);

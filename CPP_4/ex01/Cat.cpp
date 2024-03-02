@@ -6,7 +6,7 @@
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:18:55 by bberthod          #+#    #+#             */
-/*   Updated: 2024/03/02 17:05:33 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/03/02 18:27:20 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Cat::Cat(void)
 {
 	_type = "Cat";
+	_catbrain = new Brain();
 	std::cout << BOLD_YELLOW "Default constructor called for Cat" RESET << std::endl;
 }
 
@@ -34,6 +35,7 @@ Cat& Cat::operator=(const Cat& cat)
 
 Cat::~Cat(void)
 {
+	delete(_catbrain);
 	std::cout << BOLD_YELLOW "Destructor called for Cat" RESET << std::endl;
 }
 

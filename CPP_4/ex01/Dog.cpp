@@ -6,7 +6,7 @@
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:21:40 by bberthod          #+#    #+#             */
-/*   Updated: 2024/03/02 17:06:17 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/03/02 18:27:43 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Dog::Dog(void)
 {
 	_type = "Dog";
+	_dogbrain = new Brain();
 	std::cout << BOLD_BLUE "Default constructor called for Dog" RESET << std::endl;
 }
 
@@ -34,6 +35,7 @@ Dog& Dog::operator=(const Dog& dog)
 
 Dog::~Dog(void)
 {
+	delete(_dogbrain);
 	std::cout << BOLD_BLUE "Destructor called for Dog" RESET << std::endl;
 }
 
