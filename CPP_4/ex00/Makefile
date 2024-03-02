@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+         #
+#    By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/22 01:36:21 by blandineber       #+#    #+#              #
-#    Updated: 2024/03/01 18:50:11 by bberthod         ###   ########.fr        #
+#    Updated: 2024/03/02 17:45:13 by blandineber      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 RM = rm -f
