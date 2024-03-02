@@ -6,7 +6,7 @@
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:21:40 by bberthod          #+#    #+#             */
-/*   Updated: 2024/03/02 18:27:43 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/03/02 18:50:45 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 Dog::Dog(void)
 {
+	std::cout << BOLD_BLUE "Default constructor called for Dog" RESET << std::endl;
 	_type = "Dog";
 	_dogbrain = new Brain();
-	std::cout << BOLD_BLUE "Default constructor called for Dog" RESET << std::endl;
 }
 
 Dog::Dog(const Dog& dog)
 {
-	_type = dog._type;
 	std::cout << BOLD_BLUE "Copy constructor called for Dog" << RESET << std::endl;
+	_type = dog._type;
 }
 
 Dog& Dog::operator=(const Dog& dog)
 {
+	std::cout << BOLD_BLUE "Copy assignment operator called for Dog" << RESET << std::endl;
 	if (this != &dog)
 		this->_type = dog._type;
-	std::cout << BOLD_BLUE "Copy assignment operator called for Dog" << RESET << std::endl;
 	return (*this);
 }
 

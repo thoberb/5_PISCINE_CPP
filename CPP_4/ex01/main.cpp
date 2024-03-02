@@ -6,7 +6,7 @@
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 18:55:06 by bberthod          #+#    #+#             */
-/*   Updated: 2024/03/02 17:55:29 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/03/02 18:56:55 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,18 @@
 
 int main()
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	delete j;//should not create a leak
-	delete i;
-	return 0;
+	int i = 0;
+	const Animal* j[20];
+
+	while(i++ <= 20)
+	{
+		if (i <= 10)
+			j[i] = new Dog();
+		else
+			j[i] = new Cat();
+	}
+
+	i = 0;
+	while(i++ <= 20)
+		delete(j[i]);
 }

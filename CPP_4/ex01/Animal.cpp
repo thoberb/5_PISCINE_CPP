@@ -6,7 +6,7 @@
 /*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:02:11 by bberthod          #+#    #+#             */
-/*   Updated: 2024/03/02 17:04:27 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/03/02 18:48:28 by blandineber      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 Animal::Animal(void)
 {
-	_type = "default";
 	std::cout << BOLD_RED "Default constructor called for Animal" RESET << std::endl;
+	_type = "default";
 }
 
 Animal::Animal(const Animal& animal)
 {
-	_type = animal._type;
 	std::cout << BOLD_RED "Copy constructor called for Animal" << RESET << std::endl;
+	_type = animal._type;
 }
 
 Animal& Animal::operator=(const Animal& animal)
 {
+	std::cout << BOLD_RED "Copy assignment operator called for Animal" << RESET << std::endl;
 	if (this != &animal)
 		this->_type = animal._type;
-	std::cout << BOLD_RED "Copy assignment operator called for Animal" << RESET << std::endl;
 	return (*this);
 }
 
