@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
+/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:21:40 by bberthod          #+#    #+#             */
-/*   Updated: 2024/03/02 18:49:27 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/03/05 17:56:51 by bberthod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog(void)
 	_type = "Dog";
 }
 
-Dog::Dog(const Dog& dog)
+Dog::Dog(const Dog& dog) : Animal(dog)
 {
 	std::cout << BOLD_BLUE "Copy constructor called for Dog" << RESET << std::endl;
 	_type = dog._type;

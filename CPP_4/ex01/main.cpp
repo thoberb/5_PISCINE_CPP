@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
+/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 18:55:06 by bberthod          #+#    #+#             */
-/*   Updated: 2024/03/02 18:56:55 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/03/05 18:06:40 by bberthod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,26 @@
 
 int main()
 {
-	int i = 0;
-	const Animal* j[20];
+    int i = 0;
+    const Animal* j[20];
 
-	while(i++ <= 20)
-	{
-		if (i <= 10)
-			j[i] = new Dog();
-		else
-			j[i] = new Cat();
-	}
+    while (i < 20)
+    {
+        if (i < 10)
+            j[i] = new Dog();
+        else
+            j[i] = new Cat();
 
-	i = 0;
-	while(i++ <= 20)
-		delete(j[i]);
+        i++;  // Increment after assigning the value to avoid off-by-one error
+    }
+
+    j[5]->makeSound();
+    j[16]->makeSound();
+
+    // Clean up memory
+    for (i = 0; i < 20; i++)
+        delete j[i];
+
+    return 0;
 }
+

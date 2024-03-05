@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
+/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 18:00:51 by blandineber       #+#    #+#             */
-/*   Updated: 2024/03/02 18:10:58 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/03/05 18:22:53 by bberthod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,14 @@
 Brain::Brain(void)
 {
 	std::cout << BOLD_GREEN "Default constructor called for brain" RESET << std::endl;
-	int i = -1;
-	while (i++ <= 100)
+	for (int i = 0; i < 100; i++)
 		_ideas[i] = "Brain idea";
 }
 
 Brain::Brain(const Brain& brain)
 {
 	std::cout << BOLD_GREEN "Copy constructor called for brain" RESET << std::endl;
-	int i = -1;
-	while(i++ <= 100)
+	for (int i = 0; i < 100; i++)
 		_ideas[i] = brain._ideas[i];
 }
 
@@ -33,9 +31,8 @@ Brain& Brain::operator=(const Brain& brain)
 	std::cout << BOLD_GREEN "Copy assignment operator called for brain" RESET << std::endl;
 	if (this != &brain)
 	{
-		int i = -1;
-		while(i++ <= 100)
-			this->_ideas[i] = brain._ideas[i];
+		for (int i = 0; i < 100; i++)
+			_ideas[i] = "Brain idea";
 	}
 	return (*this);
 }

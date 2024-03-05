@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+         #
+#    By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/22 01:36:21 by blandineber       #+#    #+#              #
-#    Updated: 2024/03/02 18:26:11 by blandineber      ###   ########.fr        #
+#    Updated: 2024/03/05 19:44:44 by bberthod         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = c++
 RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = JeNeVeuxPasBrulerLeMonde
+NAME = ClasseAbstraite
 
 all: $(NAME)
 

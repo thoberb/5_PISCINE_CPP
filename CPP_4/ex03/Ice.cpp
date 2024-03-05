@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
+/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 21:00:47 by blandineber       #+#    #+#             */
-/*   Updated: 2024/03/04 23:14:20 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/03/05 19:17:00 by bberthod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Ice::Ice(void)
 	_type = "ice";
 }
 
-Ice::Ice(const Ice& ice)
+Ice::Ice(const Ice& ice) : AMateria(ice)
 {
 	std::cout << BOLD_BLUE "Copy constructor called for Ice" RESET << std::endl;
 	_type = ice._type;

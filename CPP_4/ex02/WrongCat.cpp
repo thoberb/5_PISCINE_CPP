@@ -18,7 +18,7 @@ WrongCat::WrongCat(void)
 	_type = "WrongCat";
 }
 
-WrongCat::WrongCat(const WrongCat& wrongcat)
+WrongCat::WrongCat(const WrongCat& wrongcat) : WrongAnimal(wrongcat)
 {
 	std::cout << BOLD_YELLOW "Copy constructor called for WrongCat" << RESET << std::endl;
 	_type = wrongcat._type;

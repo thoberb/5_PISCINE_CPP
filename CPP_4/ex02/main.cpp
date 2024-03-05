@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
+/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 18:55:06 by bberthod          #+#    #+#             */
-/*   Updated: 2024/03/02 19:05:08 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/03/05 18:25:37 by bberthod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

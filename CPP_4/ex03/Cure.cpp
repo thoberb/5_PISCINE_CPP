@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
+/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 21:14:11 by blandineber       #+#    #+#             */
-/*   Updated: 2024/03/04 23:14:14 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/03/05 19:17:12 by bberthod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Cure::Cure(void)
 	_type = "cure";
 }
 
-Cure::Cure(const Cure& cure)
+Cure::Cure(const Cure& cure) : AMateria(cure)
 {
 	std::cout << BOLD_GREEN "Copy constructor called for Cure" RESET << std::endl;
 	_type = cure._type;

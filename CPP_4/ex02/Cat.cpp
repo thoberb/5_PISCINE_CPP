@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
+/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:18:55 by bberthod          #+#    #+#             */
-/*   Updated: 2024/03/02 18:50:35 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/03/05 18:20:42 by bberthod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,22 @@ Cat::Cat(void)
 	_catbrain = new Brain();
 }
 
-Cat::Cat(const Cat& cat)
+Cat::Cat(const Cat& cat) : Animal(cat)
 {
 	std::cout << BOLD_YELLOW "Copy constructor called for Cat" << RESET << std::endl;
 	_type = cat._type;
+	_catbrain = new Brain(*cat._catbrain);
 }
 
 Cat& Cat::operator=(const Cat& cat)
 {
 	std::cout << BOLD_YELLOW "Copy assignment operator called for Cat" << RESET << std::endl;
 	if (this != &cat)
-		this->_type = cat._type;
+	{
+		delete _catbrain;
+		_type = cat._type;
+		_catbrain = new Brain(*cat._catbrain);
+	}
 	return (*this);
 }
 

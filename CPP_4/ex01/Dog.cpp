@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blandineberthod <blandineberthod@studen    +#+  +:+       +#+        */
+/*   By: bberthod <bberthod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 19:21:40 by bberthod          #+#    #+#             */
-/*   Updated: 2024/03/02 18:50:45 by blandineber      ###   ########.fr       */
+/*   Updated: 2024/03/05 18:21:55 by bberthod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,22 @@ Dog::Dog(void)
 	_dogbrain = new Brain();
 }
 
-Dog::Dog(const Dog& dog)
+Dog::Dog(const Dog& dog) : Animal(dog)
 {
 	std::cout << BOLD_BLUE "Copy constructor called for Dog" << RESET << std::endl;
 	_type = dog._type;
+	_dogbrain = new Brain(*dog._dogbrain);
 }
 
 Dog& Dog::operator=(const Dog& dog)
 {
 	std::cout << BOLD_BLUE "Copy assignment operator called for Dog" << RESET << std::endl;
 	if (this != &dog)
-		this->_type = dog._type;
+	{
+		delete _dogbrain;
+		_type = dog._type;
+		_dogbrain = new Brain(*dog._dogbrain);
+	}
 	return (*this);
 }
 
